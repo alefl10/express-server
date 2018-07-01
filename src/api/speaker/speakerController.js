@@ -1,7 +1,7 @@
 exports.params = (req, res, next, id) => {
   let found = false;
   req.app.get('appData').speakers.forEach((item) => {
-    if (item.id === parseInt(id, 10)) {
+    if (item.shortname === id) {
       req.speaker = item;
       found = true;
     }
@@ -14,34 +14,38 @@ exports.params = (req, res, next, id) => {
 };
 
 exports.get = (req, res) => {
-  let info = '';
-  req.app.get('appData').speakers.forEach((item) => {
-    info += `
-    <li>
-      <h2>${item.name}</h2>
-      <img src="/images/speakers/${item.shortname}_tn.jpg" alt="speaker">
-      <p>${item.summary}</p>
-    </li>
-    `;
+  const data = req.app.get('appData');
+  let pagePhotos = [];
+  const {
+    speakers,
+  } = data;
+
+  data.speakers.forEach((item) => {
+    pagePhotos = pagePhotos.concat(item.artwork);
   });
-  res.send(`
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-      <h1>Roux Academy Meetups</h1>
-      ${info}
-      <script src="/reload/reload.js"></script>
-  `);
+
+  res.render('speakers', {
+    pageTitle: 'Speakers',
+    artwork: pagePhotos,
+    speakers,
+    pageID: 'speakerList',
+  });
 };
 
 exports.getOne = (req, res) => {
   const {
     speaker,
   } = req;
+  const speakers = [];
+  let pagePhotos = [];
 
-  res.send(`
-      <link rel="stylesheet" type="text/css" href="/css/style.css">
-      <h1>${speaker.title}</h1>
-      <h2>with ${speaker.name}</h2>
-      <img src="/images/speakers/${speaker.shortname}_tn.jpg" alt="speaker">
-      <p>${speaker.summary}</p>
-  `);
+  speakers.push(speaker);
+  pagePhotos = pagePhotos.concat(speaker.artwork);
+
+  res.render('speakers', {
+    pageTitle: 'Speaker Info',
+    artwork: pagePhotos,
+    speakers,
+    pageID: 'speakerDetail',
+  });
 };

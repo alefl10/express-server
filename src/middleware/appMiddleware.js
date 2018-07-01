@@ -12,4 +12,6 @@ module.exports = (app) => {
   app.use(override());
 
   app.set('appData', dataFile);
+  app.set('view engine', 'ejs');
+  app.set('views', 'src/views');
 };
