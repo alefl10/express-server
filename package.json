@@ -1,0 +1,44 @@
+{
+  "name": "expressserver",
+  "version": "1.0.0",
+  "description": "Webserver built with Node.js and Express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alefl10/express-server.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "Webserver"
+  ],
+  "author": "Alejandro Ferrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alefl10/express-server/issues"
+  },
+  "homepage": "https://github.com/alefl10/express-server#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.10.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
