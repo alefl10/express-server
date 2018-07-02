@@ -1,5 +1,6 @@
 import express from 'express';
 import speaker from './api/speaker/speakerRouter';
+import feedback from './api/feedback/feedbackRouter';
 import dataFile from './data/data.json';
 
 const app = express();
@@ -30,5 +31,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/speakers', speaker);
+app.use('/feedback', feedback);
 
 export default app;
