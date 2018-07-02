@@ -9,7 +9,7 @@ Project based on the following tutorial
 1. Make sure you have these installed
 - [node.js](http://nodejs.org/)
 - [git](http://git-scm.com/)
-- [Browser] (https://www.google.com/chrome/)
+- [Browser](https://www.google.com/chrome/)
 2. Clone this repository into your local machine using the terminal (mac) or Gitbash (PC) 
 3. CD to the folder
 4. Run `> npm install` to install the project dependencies
