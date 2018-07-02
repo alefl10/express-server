@@ -1,7 +1,7 @@
 # express-server
 
 Project based on the following tutorial
-<https://www.lynda.com/Express-js-tutorials/Setting-up-our-chat-route/502310/519149-4.html>
+<https://www.lynda.com/Express-js-tutorials/Welcome/502310/519122-4.html>
 
 
 ## Instructions
